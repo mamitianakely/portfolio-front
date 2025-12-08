@@ -17,7 +17,7 @@ export default function Footer() {
       />
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
-        
+
         {/* Sections */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
 
@@ -27,9 +27,8 @@ export default function Footer() {
               Mamitiana Christiano
             </h3>
             <p className="text-gray-400 leading-relaxed">
-              Développeur FullStack passionné, créant des applications modernes
-              avec une volonté inébranlable — comme un membre de l’Akatsuki
-              en mission.
+              Développeur FullStack passionné, créant des applications web et mobiles modernes
+              je suis prêt à relever les nouveaux défis.
             </p>
           </div>
 
