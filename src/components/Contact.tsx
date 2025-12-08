@@ -9,16 +9,21 @@ export default function Contact() {
       "https://www.facebook.com/search/top?q=" + encodeURIComponent("Christ Mamitianæ"),
     instagram: "https://instagram.com/mamytiana12",
     github: "https://github.com/mamitianakely/",
-    mailto: "mailto:christamamitiana@gmail.com?subject=" + encodeURIComponent("Contact depuis portfolio"),
+    mailto:
+      "mailto:christamamitiana@gmail.com?subject=" +
+      encodeURIComponent("Contact depuis portfolio"),
     linkedinSearch:
-      "https://www.linkedin.com/search/results/all/?keywords=" + encodeURIComponent("Mamitiana Christ"),
+      "https://www.linkedin.com/search/results/all/?keywords=" +
+      encodeURIComponent("Mamitiana Christ"),
   };
 
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState("");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
@@ -50,8 +55,8 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="min-h-screen flex flex-col md:flex-row items-center justify-center px-6 py-20 
-      bg-[#A4C8EB] dark:from-black dark:to-gray-900 gap-16"
+      className="min-h-screen flex flex-col md:flex-row items-center justify-center
+      px-6 py-20 bg-[#0A0A0A] text-[#E5E5E5] gap-16"
     >
       {/* ===================== BLOC GAUCHE ===================== */}
       <motion.div
@@ -61,62 +66,37 @@ export default function Contact() {
         viewport={{ once: true }}
         className="flex-1 flex flex-col items-center text-center gap-6"
       >
-        <h2 className="text-4xl font-extrabold">Contactez-moi</h2>
+        <h2 className="text-4xl font-extrabold text-[#D90429] drop-shadow-[0_0_10px_#D90429]">
+          Contactez-moi
+        </h2>
+
         <p className="text-lg opacity-80 max-w-md">
-          Une idée, un projet, un besoin ? Je suis à un message de vous.  
+          Une idée, un projet, un besoin ? Je suis à un message de vous.
           Construisons quelque chose d’exceptionnel ensemble.
         </p>
 
         <p className="text-lg opacity-80 max-w-md">Voici mes réseaux :</p>
 
         <div className="flex flex-wrap gap-4 justify-center mt-2">
-          <motion.a
-            href={links.facebookSearch}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.12 }}
-            className="p-3 rounded-full bg-white/20 backdrop-blur-lg hover:bg-white/40 shadow-md hover:shadow-xl transition"
-          >
-            <img src="/facebook.png" className="w-6 h-6" alt="Facebook" />
-          </motion.a>
-
-          <motion.a
-            href={links.linkedinSearch}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.12 }}
-            className="p-3 rounded-full bg-white/20 backdrop-blur-lg hover:bg-white/40 shadow-md hover:shadow-xl transition"
-          >
-            <img src="/linkedin.png" className="w-6 h-6" alt="LinkedIn" />
-          </motion.a>
-
-          <motion.a
-            href={links.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.12 }}
-            className="p-3 rounded-full bg-white/20 backdrop-blur-lg hover:bg-white/40 shadow-md hover:shadow-xl transition"
-          >
-            <img src="/github.png" className="w-6 h-6" alt="GitHub" />
-          </motion.a>
-
-          <motion.a
-            href={links.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.12 }}
-            className="p-3 rounded-full bg-white/20 backdrop-blur-lg hover:bg-white/40 shadow-md hover:shadow-xl transition"
-          >
-            <img src="/instagram.jpeg" className="w-6 h-6" alt="Instagram" />
-          </motion.a>
-
-          <motion.a
-            href={links.mailto}
-            whileHover={{ scale: 1.12 }}
-            className="p-3 rounded-full bg-white/20 backdrop-blur-lg hover:bg-white/40 shadow-md hover:shadow-xl transition"
-          >
-            <img src="/gmail.png" className="w-6 h-6" alt="Email" />
-          </motion.a>
+          {[
+            { icon: "/facebook.png", link: links.facebookSearch },
+            { icon: "/linkedin.png", link: links.linkedinSearch },
+            { icon: "/github.png", link: links.github },
+            { icon: "/instagram.jpeg", link: links.instagram },
+            { icon: "/gmail.png", link: links.mailto },
+          ].map((s, i) => (
+            <motion.a
+              key={i}
+              href={s.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.15 }}
+              className="p-3 rounded-full bg-[#1A1A1A] shadow-md transition
+              hover:bg-[#D90429]/30 hover:shadow-[0_0_15px_#D90429]"
+            >
+              <img src={s.icon} className="w-6 h-6" alt="icon" />
+            </motion.a>
+          ))}
         </div>
       </motion.div>
 
@@ -131,57 +111,63 @@ export default function Contact() {
         <form
           onSubmit={handleSubmit}
           className="flex flex-col gap-4 p-8 rounded-2xl backdrop-blur-2xl 
-          bg-white/10 dark:bg-white/5 shadow-xl border border-white/10 w-full"
+          bg-[#1A1A1A]/60 shadow-xl border border-[#D90429]/30 
+          w-full"
         >
           <motion.input
             name="name"
             value={form.name}
             onChange={handleChange}
-            whileFocus={{ scale: 1.02 }}
+            whileFocus={{ scale: 1.03 }}
             type="text"
             placeholder="Nom"
-            className="px-4 py-3 rounded-lg bg-white/20 dark:bg-black/30 text-white
-            placeholder-[#847FE3] focus:ring-2 focus:ring-[#847FE3] outline-none transition"
+            className="px-4 py-3 rounded-lg bg-[#000]/40 text-white
+            placeholder-[#D90429] focus:ring-2 focus:ring-[#D90429] outline-none transition"
           />
 
           <motion.input
             name="email"
             value={form.email}
             onChange={handleChange}
-            whileFocus={{ scale: 1.02 }}
+            whileFocus={{ scale: 1.03 }}
             type="email"
             placeholder="Email"
-            className="px-4 py-3 rounded-lg bg-white/20 dark:bg-black/30 text-white
-            placeholder-[#847FE3] focus:ring-2 focus:ring-[#847FE3] outline-none transition"
+            className="px-4 py-3 rounded-lg bg-[#000]/40 text-white
+            placeholder-[#D90429] focus:ring-2 focus:ring-[#D90429] outline-none transition"
           />
 
           <motion.textarea
             name="message"
             value={form.message}
             onChange={handleChange}
-            whileFocus={{ scale: 1.02 }}
+            whileFocus={{ scale: 1.03 }}
             rows={5}
             placeholder="Message"
-            className="px-4 py-3 rounded-lg bg-white/20 dark:bg-black/30 text-white
-            placeholder-[#847FE3] focus:ring-2 focus:ring-[#847FE3] outline-none transition"
+            className="px-4 py-3 rounded-lg bg-[#000]/40 text-white
+            placeholder-[#D90429] focus:ring-2 focus:ring-[#D90429] outline-none transition"
           />
 
           <motion.button
             type="submit"
-            whileHover={{ scale: 1.05, y: -3 }}
+            whileHover={{ scale: 1.07, y: -3 }}
             whileTap={{ scale: 0.95 }}
             disabled={loading}
-            className="mt-3 px-6 py-3 rounded-xl bg-gradient-to-r from-[#847FE3] to-[#A4C8EB]
-            text-white font-semibold shadow-lg hover:shadow-2xl transition-all"
+            className="mt-3 px-6 py-3 rounded-xl bg-gradient-to-r 
+            from-[#D90429] to-[#A30000]
+            text-white font-semibold shadow-lg hover:shadow-[0_0_20px_#D90429]
+            transition-all"
           >
             {loading ? "Envoi..." : "Envoyer le message"}
           </motion.button>
 
           {success && (
-            <p className="mt-2 text-center text-sm text-white font-medium">{success}</p>
+            <p className="mt-2 text-center text-sm text-[#D90429] font-medium">
+              {success}
+            </p>
           )}
         </form>
       </motion.div>
     </section>
+    
   );
 }

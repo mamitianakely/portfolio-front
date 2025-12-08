@@ -4,11 +4,14 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="min-h-screen flex flex-col items-center justify-center px-6 bg-[#A4C8EB] dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300"
+      className="min-h-screen flex flex-col items-center justify-center px-6 
+      bg-[#0A0909] text-gray-100 transition-colors duration-300"
     >
       <div className="text-center mb-14">
-        <h2 className="text-4xl font-extrabold">Mes Compétences</h2>
-        <p className="text-lg mt-4 opacity-80">
+        <h2 className="text-4xl font-extrabold text-white tracking-wide drop-shadow-[0_0_10px_#B30000]">
+          Mes Compétences
+        </h2>
+        <p className="text-lg mt-4 opacity-80 text-gray-300">
           Voici les technologies et outils que je maîtrise dans le web, le mobile et le design.
         </p>
       </div>
@@ -18,15 +21,18 @@ export default function Skills() {
 
         {/* Développement Web */}
         <div
-          className="p-8 rounded-2xl backdrop-blur-xl bg-white/10 dark:bg-white/5 shadow-lg
-          hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+          className="p-8 rounded-2xl bg-[#0D0D0D]/70 border border-red-900/40 
+          shadow-[0_0_15px_#7A0000] hover:shadow-[0_0_20px_#B30000] 
+          hover:-translate-y-1 transition-all duration-300"
         >
           <div className="flex items-center gap-3 mb-6">
             <img src="/web.png" alt="Web Icon" className="w-10 h-10" />
-            <h3 className="text-2xl font-semibold">Développement Web</h3>
+            <h3 className="text-2xl font-semibold text-white drop-shadow-[0_0_6px_#B30000]">
+              Développement Web
+            </h3>
           </div>
 
-          <p className="mb-6 opacity-80">
+          <p className="mb-6 opacity-80 text-gray-300">
             Construction d'applications web modernes, performantes et sécurisées.
           </p>
 
@@ -44,15 +50,18 @@ export default function Skills() {
 
         {/* Développement Mobile */}
         <div
-          className="p-8 rounded-2xl backdrop-blur-xl bg-white/10 dark:bg-white/5 shadow-lg
-          hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+          className="p-8 rounded-2xl bg-[#0D0D0D]/70 border border-red-900/40 
+          shadow-[0_0_15px_#7A0000] hover:shadow-[0_0_20px_#B30000] 
+          hover:-translate-y-1 transition-all duration-300"
         >
           <div className="flex items-center gap-3 mb-6">
             <img src="/android.png" alt="Android Icon" className="w-10 h-10" />
-            <h3 className="text-2xl font-semibold">Développement Android</h3>
+            <h3 className="text-2xl font-semibold text-white drop-shadow-[0_0_6px_#B30000]">
+              Développement Android
+            </h3>
           </div>
 
-          <p className="mb-6 opacity-80">
+          <p className="mb-6 opacity-80 text-gray-300">
             Création d'applications mobiles Android performantes avec Kotlin.
           </p>
 
@@ -60,22 +69,25 @@ export default function Skills() {
             <img src="/kotlin.png" className="w-12 h-12 hover:scale-110 transition" />
             <img src="/java.png" className="w-12 h-12 hover:scale-110 transition" />
             <img src="/node.png" className="w-12 h-12 hover:scale-110 transition" />
-            <img src="/django.jpeg" className="w-12 h-12 hover:scale-110 transition" /> 
+            <img src="/django.jpeg" className="w-12 h-12 hover:scale-110 transition" />
             <img src="/postgres.png" className="w-12 h-12 hover:scale-110 transition" />
           </div>
         </div>
 
         {/* UX / UI Design */}
         <div
-          className="p-8 rounded-2xl backdrop-blur-xl bg-white/10 dark:bg-white/5 shadow-lg
-          hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+          className="p-8 rounded-2xl bg-[#0D0D0D]/70 border border-red-900/40 
+          shadow-[0_0_15px_#7A0000] hover:shadow-[0_0_20px_#B30000] 
+          hover:-translate-y-1 transition-all duration-300"
         >
           <div className="flex items-center gap-3 mb-6">
             <img src="/uiux.png" alt="Figma Icon" className="w-10 h-10" />
-            <h3 className="text-2xl font-semibold">Designer UX / UI</h3>
+            <h3 className="text-2xl font-semibold text-white drop-shadow-[0_0_6px_#B30000]">
+              Designer UX / UI
+            </h3>
           </div>
 
-          <p className="mb-6 opacity-80">
+          <p className="mb-6 opacity-80 text-gray-300">
             Création de maquettes modernes, ergonomiques et orientées utilisateur avec Figma.
           </p>
 
