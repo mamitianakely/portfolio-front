@@ -63,8 +63,8 @@ export default function Contact() {
         initial={{ opacity: 0, x: -40 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.7 }}
-        viewport={{ once: true }}
-        className="flex-1 flex flex-col items-center text-center gap-6"
+        viewport={{ once: false }}
+        className="flex flex-col items-center text-center gap-6"
       >
         <h2 className="text-4xl font-extrabold text-[#D90429] drop-shadow-[0_0_10px_#D90429]">
           Contactez-moi
@@ -106,7 +106,7 @@ export default function Contact() {
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.7 }}
         viewport={{ once: true }}
-        className="flex-1 w-full max-w-lg flex justify-center"
+        className="w-full max-w-lg flex justify-center"
       >
         <form
           onSubmit={handleSubmit}
