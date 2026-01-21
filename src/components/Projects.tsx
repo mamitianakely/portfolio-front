@@ -35,22 +35,22 @@ export default function Projects() {
   /* ======================
      Fetch
   ====================== */
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const res = await fetch("/api/projects");
-        if (!res.ok) throw new Error("Erreur lors du chargement des projets");
-        const data: Project[] = await res.json();
-        setProjects(data);
-      } catch (err: any) {
-        setError(err.message || "Erreur inconnue");
-      } finally {
-        setLoading(false);
-      }
-    };
+ useEffect(() => {
+  const fetchProjects = async () => {
+    try {
+      const res = await fetch("/api/projects");
+      if (!res.ok) throw new Error("Erreur lors du chargement des projets");
+      const data: Project[] = await res.json();
+      setProjects(data);
+    } catch (err: any) {
+      setError(err.message || "Erreur inconnue");
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    fetchProjects();
-  }, []);
+  fetchProjects();
+}, []);
 
   /* ======================
      Filter
