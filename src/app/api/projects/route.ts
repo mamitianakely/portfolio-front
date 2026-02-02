@@ -7,14 +7,29 @@ const supabase = createClient(
 );
 
 export async function GET() {
-  const { data, error } = await supabase
-    .from("projects")
-    .select("*")
-    .order("createdAt", { ascending: false });
+  try {
+    const { data, error } = await supabase
+      .from("projects")
+      .select("*");
 
-  if (error) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    if (error) throw error;
+
+    const projects = data.map((p) => ({
+      id: p.id,
+      title: p.title,
+      description: p.description,
+      tech: p.tech,
+      image: p.image,
+      githubFront: p.github_front,
+      githubBack: p.github_back,
+    }));
+
+    return NextResponse.json(projects);
+  } catch (err: any) {
+    return NextResponse.json(
+      { error: err.message || "Erreur lors de la récupération des projets" },
+      { status: 500 }
+    );
   }
-
-  return NextResponse.json(data);
 }
+
